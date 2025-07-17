@@ -6,13 +6,15 @@
             "userId": 1,
             "id": 1,
             "title": "delectus aut autem",
-            "completed": false
+            "completed": false,
+            "imgSrc": 'https://placehold.co/150x150'
         },
         {
             "userId": 1,
             "id": 2,
             "title": "quis ut nam facilis et officia qui",
-            "completed": false
+            "completed": false,
+            "imgSrc": 'https://placehold.co/150x150'
         },
         {
             "userId": 1,
@@ -34,6 +36,9 @@
         }
     ]);
 
+    const imgAlt = ref('Imagem de Jon Snow')
+    const imgSrc = ref('https://placehold.co/150x150')
+
     onMounted(() => {
         console.log(todos.value[0].title)
     })
@@ -47,6 +52,11 @@
             v-bind:key="obj.id"
             class="todos-item"
         >
+            <img 
+                v-show="obj.imgSrc"
+                v-bind:src="obj.imgSrc"
+            >
+
             {{ index + ' - ' + obj.title }}
         </div>
     </div>
