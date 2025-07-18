@@ -3,6 +3,7 @@
   import TheHeader from './components/TheHeader.vue'
   import TheBidirecional from './components/TheBidirecional.vue'
   import Eventos from './components/Eventos.vue'
+  import PropriedadeComputada from './components/PropriedadeComputada.vue'
   import { ref } from 'vue'
 
   const showHeader = ref(true);
@@ -32,7 +33,8 @@
 
   <main>
     <!-- <TheBidirecional /> -->
-    <Eventos />
+    <!-- <Eventos /> -->
+     <PropriedadeComputada></PropriedadeComputada>
   </main>
 </template>
 
