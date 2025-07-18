@@ -5,6 +5,7 @@
   import Eventos from './components/Eventos.vue'
   import PropriedadeComputada from './components/PropriedadeComputada.vue'
   import ObservadorWatch from './components/ObservadorWatch.vue'
+  import LifeCicle from './components/LifeCicle.vue'
   import { ref } from 'vue'
 
   const showHeader = ref(true);
@@ -36,7 +37,8 @@
     <!-- <TheBidirecional /> -->
     <!-- <Eventos /> -->
     <!-- <PropriedadeComputada></PropriedadeComputada> -->
-    <ObservadorWatch></ObservadorWatch>
+    <!-- <ObservadorWatch></ObservadorWatch> -->
+    <LifeCicle></LifeCicle>
   </main>
 </template>
 

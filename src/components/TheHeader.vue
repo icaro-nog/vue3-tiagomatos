@@ -1,5 +1,5 @@
 <script setup>
-    import { onMounted, ref } from 'vue';
+    import { onBeforeMount, onBeforeUnmount, onMounted, onUnmounted, ref } from 'vue';
     
     const todos = ref([
         {
@@ -44,9 +44,29 @@
     const pClass = ref(['text', { 'text-home': isHome }])
     const styleClass = ref({ 'color': 'darkorange', backgroundColor: 'green'});
 
+    // onMounted(() => {
+    //     console.log(todos.value[0].title)
+    // })
+
+    function resize($evt){
+        console.log($evt)
+    }
+
     onMounted(() => {
-        console.log(todos.value[0].title)
+        window.addEventListener('resize', resize)
     })
+
+    onBeforeUnmount(() => {
+        // Destruir eventos
+        // destruir libs
+        // Destruir listeners
+        console.log('onBeforeMount')
+    })
+
+    onUnmounted(() => {
+        console.log('onUnmounted')
+    })
+
 
 </script>
 
