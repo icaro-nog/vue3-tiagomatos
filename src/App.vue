@@ -6,6 +6,7 @@
   import PropriedadeComputada from './components/PropriedadeComputada.vue'
   import ObservadorWatch from './components/ObservadorWatch.vue'
   import LifeCicle from './components/LifeCicle.vue'
+  import Slot from './components/Slot.vue'
   import { ref } from 'vue'
 
   const showHeader = ref(true);
@@ -38,7 +39,16 @@
     <!-- <Eventos /> -->
     <!-- <PropriedadeComputada></PropriedadeComputada> -->
     <!-- <ObservadorWatch></ObservadorWatch> -->
-    <LifeCicle></LifeCicle>
+    <!-- <LifeCicle></LifeCicle> -->
+    <Slot>
+      <template v-slot:title>
+        Home
+      </template>
+      <template v-slot:description>
+        <p>asdasd</p>
+      </template>
+      content do slot
+    </Slot>
   </main>
 </template>
 
