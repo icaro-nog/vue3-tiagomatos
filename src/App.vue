@@ -7,6 +7,7 @@
   import ObservadorWatch from './components/ObservadorWatch.vue'
   import LifeCicle from './components/LifeCicle.vue'
   import Slot from './components/Slot.vue'
+  import BaseCard from './components/BaseCard.vue'
   import { ref } from 'vue'
 
   const showHeader = ref(true);
@@ -40,7 +41,7 @@
     <!-- <PropriedadeComputada></PropriedadeComputada> -->
     <!-- <ObservadorWatch></ObservadorWatch> -->
     <!-- <LifeCicle></LifeCicle> -->
-    <Slot>
+    <!-- <Slot>
       <template v-slot:title>
         Home
       </template>
@@ -48,7 +49,11 @@
         <p>asdasd</p>
       </template>
       content do slot
-    </Slot>
+    </Slot> -->
+    <div class="card">
+      teste
+    </div>
+    <BaseCard></BaseCard>
   </main>
 </template>
 
