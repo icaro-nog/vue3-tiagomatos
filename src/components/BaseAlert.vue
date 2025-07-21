@@ -1,5 +1,5 @@
 <script setup>
-    import { defineProps, computed, onMounted } from 'vue';
+    import { defineProps, computed, onMounted, defineEmits } from 'vue';
 
     const props = defineProps({
         variant: {
@@ -12,9 +12,11 @@
         },
         test: {
             type: String,
-            default: ''
+            default: 'test'
         }
     })
+
+    const emit = defineEmits(['close'])
 
     const baseClass = computed(() => {
         return [
@@ -22,15 +24,24 @@
             props.variant ? `alert-${props.variant}` : ''
         ]
     })
+    
+    const onClick = () => {
+        console.log('clickou')
+        emit('close')
+    }
 
-    onMounted(
-        console.log(props.test)
-    )
+    // onMounted(() => {
+    //     console.log(props.test)
+    // })
 </script>
 
 <template>
     <div v-bind:class="baseClass">
         <slot></slot>
+
+        <button @click="onClick">
+            X
+        </button>
     </div>
 </template>
 
@@ -40,6 +51,8 @@
         border-radius: 6px;
         color: gray;
         background: #ddd;
+        display: flex;
+        justify-content: space-between;
     }
 
     .alert-success{

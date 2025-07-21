@@ -17,8 +17,16 @@
   const showName = ref(false); 
   const accessLevel = ref('marketing'); 
   
-  const variant = ref('danger');
+  const variant = ref('success');
   const text = ref('Seu formulário foi enviado');
+  const showAlert = ref(true)
+
+  const onClose = () => {
+    // ref usar: nomeDaConstante.value pra definir novo valor
+    showAlert.value = false
+    console.log('onClose')
+    console.log(showAlert.value)
+  }
 
 </script>
 
@@ -58,8 +66,17 @@
       teste
     </div>
     <BaseCard></BaseCard> -->
+
+    <!-- <PAI> -> props do pai para o filho
+      <FILHO>
+        <NETO></NETO> -> emit do filho pro pai 
+      </FILHO>
+    </PAI> -->
+
     <BaseAlert
+      v-if="showAlert"
       :variant="variant"
+      @close="onClose"
     >
       {{ text }}
     </BaseAlert>
