@@ -8,6 +8,7 @@
   import LifeCicle from './components/LifeCicle.vue'
   import Slot from './components/Slot.vue'
   import BaseCard from './components/BaseCard.vue'
+  import BaseAlert from './components/BaseAlert.vue'
   import { ref } from 'vue'
 
   const showHeader = ref(true);
@@ -15,6 +16,9 @@
   const lastName = ref('Snow'); 
   const showName = ref(false); 
   const accessLevel = ref('marketing'); 
+  
+  const variant = ref('danger');
+  const text = ref('Seu formulário foi enviado');
 
 </script>
 
@@ -50,10 +54,15 @@
       </template>
       content do slot
     </Slot> -->
-    <div class="card">
+    <!-- <div class="card">
       teste
     </div>
-    <BaseCard></BaseCard>
+    <BaseCard></BaseCard> -->
+    <BaseAlert
+      :variant="variant"
+    >
+      {{ text }}
+    </BaseAlert>
   </main>
 </template>
 
