@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
   import HelloWorld from './components/HelloWorld.vue'
   import TheHeader from './components/TheHeader.vue'
   import TheBidirecional from './components/TheBidirecional.vue'
@@ -28,9 +28,9 @@
     console.log(showAlert.value)
   }
 
-</script>
+</script> -->
 
-<template>
+<!-- <template> -->
   <!-- <TheHeader
     v-if="showHeader"
   ></TheHeader>
@@ -47,7 +47,7 @@
   
   <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" /> -->
 
-  <main>
+  <!-- <main> -->
     <!-- <TheBidirecional /> -->
     <!-- <Eventos /> -->
     <!-- <PropriedadeComputada></PropriedadeComputada> -->
@@ -73,17 +73,17 @@
       </FILHO>
     </PAI> -->
 
-    <BaseAlert
+    <!-- <BaseAlert
       v-if="showAlert"
       :variant="variant"
       @close="onClose"
     >
       {{ text }}
-    </BaseAlert>
-  </main>
-</template>
+    </BaseAlert> -->
+  <!-- </main>
+</template> -->
 
-<style scoped>
+<!-- <style scoped>
 header {
   line-height: 1.5;
 }
@@ -109,5 +109,32 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
+}
+</style> -->
+
+<template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/servicos">Serviços</router-link> |
+    <router-link to="/about">About</router-link> 
+  </nav>
+  <router-view></router-view>
+</template>
+
+<script setup>
+// Script setup for composition API
+</script>
+
+<style>
+/* Basic styling */
+nav {
+  padding: 30px;
+}
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
