@@ -114,6 +114,7 @@ header {
 <script setup>
   import { reactive } from 'vue';
   import { useStore } from 'vuex';
+  import AppProducts from './components/Products/AppProducts.vue';
 
   const store = useStore()
 
@@ -126,7 +127,7 @@ header {
         email: 'icaro@lemos.com',
     })
 
-    store.commit('storeUser', newUser)
+    store.commit('updateUser', newUser)
   }
 </script>
 
@@ -138,10 +139,21 @@ header {
     <router-link to="/usuarios/10">Usuario</router-link> 
   </nav>
   <router-view></router-view>
-  <div>
+  <!-- <div>
     <button @click="updateUser">
         Atualizar perfil
     </button>
+  </div> -->
+
+  <div>
+    <AppProducts></AppProducts>
+
+    <br><br>
+    <br><br>
+
+    <pre>
+      {{ store.state.cart }}
+    </pre>
   </div>
 </template>
 

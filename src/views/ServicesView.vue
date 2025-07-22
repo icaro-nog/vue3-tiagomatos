@@ -10,8 +10,8 @@
     <div>
         serviços
         <br>
-        {{ storeServices.state.user.first_name }} 
+        <!-- {{ storeServices.state.user.first_name }} 
         {{ storeServices.state.user.last_name }} <br>
-        {{ storeServices.state.user.email }}
+        {{ storeServices.state.user.email }} -->
     </div>
 </template>
