@@ -111,6 +111,13 @@ header {
   }
 }
 </style> -->
+<script setup>
+  import { useStore } from 'vuex';
+
+  const store = useStore()
+
+  console.log(store.state.user)
+</script>
 
 <template>
   <nav>
@@ -121,10 +128,6 @@ header {
   </nav>
   <router-view></router-view>
 </template>
-
-<script setup>
-// Script setup for composition API
-</script>
 
 <style>
 /* Basic styling */
