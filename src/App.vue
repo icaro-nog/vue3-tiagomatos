@@ -112,11 +112,22 @@ header {
 }
 </style> -->
 <script setup>
+  import { reactive } from 'vue';
   import { useStore } from 'vuex';
 
   const store = useStore()
 
-  console.log(store.state.user)
+  // console.log(store.state.user)
+
+  function updateUser(){
+    const newUser = reactive({
+        first_name: 'Ícaro',
+        last_name: 'Lemos',
+        email: 'icaro@lemos.com',
+    })
+
+    store.commit('storeUser', newUser)
+  }
 </script>
 
 <template>
@@ -127,6 +138,11 @@ header {
     <router-link to="/usuarios/10">Usuario</router-link> 
   </nav>
   <router-view></router-view>
+  <div>
+    <button @click="updateUser">
+        Atualizar perfil
+    </button>
+  </div>
 </template>
 
 <style>
