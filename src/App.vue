@@ -150,7 +150,9 @@ header {
 
     <br><br>
     <br><br>
-
+    <div>
+      {{ store.getters.total }}
+    </div>
     <pre>
       {{ store.state.cart }}
     </pre>
