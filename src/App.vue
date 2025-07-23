@@ -127,7 +127,10 @@ header {
         email: 'icaro@lemos.com',
     })
 
-    store.commit('updateUser', newUser)
+    // store.commit('updateUser', newUser)
+    store.dispatch('updateUser', newUser).then(() => {
+      console.log('terminouuuuuuuuu')
+    })
   }
 </script>
 
@@ -139,12 +142,14 @@ header {
     <router-link to="/usuarios/10">Usuario</router-link> 
   </nav>
   <router-view></router-view>
-  <!-- <div>
+  <div>
+    {{ store.state.user.first_name }} {{ store.state.user.last_name }}
+    <br>
     <button @click="updateUser">
         Atualizar perfil
     </button>
-  </div> -->
-
+  </div>
+  <br><br>
   <div>
     <AppProducts></AppProducts>
 

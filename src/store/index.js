@@ -48,6 +48,13 @@ export default createStore({
         }
     },
     actions:{
-
+        updateUser({ commit }, data){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    commit('updateUser', data)
+                    resolve()
+                }, 3000)
+            })
+        }
     }
 })
